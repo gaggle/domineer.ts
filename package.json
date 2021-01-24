@@ -4,7 +4,11 @@
   "description": "Strongly opinionated linter",
   "main": "index.js",
   "scripts": {
-    "test": "echo no tests yet"
+    "lint": "eslint '**/*.{js,mjs}'",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "npm run test:unit && npm run lint",
+    "test:unit": "mocha",
+    "test:watch": "nodemon -e .js,.ts -w ./src -x 'npm run test'"
   },
   "author": "Jon Lauridsen <mail@jonlauridsen.com>",
   "license": "ISC",

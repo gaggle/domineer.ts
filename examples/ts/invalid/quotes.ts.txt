@@ -1,0 +1,27 @@
+CODE:
+console.log('foo')
+
+OUTPUT:
+console.log("foo")
+
+ERRORS:
+[
+  {
+    "column": 13,
+    "endColumn": 18,
+    "endLine": 1,
+    "fix": {
+      "range": [
+        12,
+        17
+      ],
+      "text": "\"foo\""
+    },
+    "line": 1,
+    "message": "Strings must use doublequote.",
+    "messageId": "wrongQuotes",
+    "nodeType": "Literal",
+    "ruleId": "quotes",
+    "severity": 2
+  }
+]

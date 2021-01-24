@@ -1,0 +1,18 @@
+CODE:
+function missingReturnType () { return "foo" }
+console.log(missingReturnType)
+
+ERRORS:
+[
+  {
+    "column": 1,
+    "endColumn": 30,
+    "endLine": 1,
+    "line": 1,
+    "message": "Missing return type on function.",
+    "messageId": "missingReturnType",
+    "nodeType": "FunctionDeclaration",
+    "ruleId": "@typescript-eslint/explicit-function-return-type",
+    "severity": 2
+  }
+]
