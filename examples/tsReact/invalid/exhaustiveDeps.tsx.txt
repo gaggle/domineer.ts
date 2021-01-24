@@ -1,0 +1,38 @@
+CODE:
+import { useMemo } from "react"
+
+function getHook (): any {
+  return function useMemoizedButNotDependingOnItsInput (hookVariable: string): string {
+    return useMemo(() => {
+      return hookVariable
+    }, [])
+  }
+}
+
+console.log(getHook)
+
+ERRORS:
+[
+  {
+    "column": 8,
+    "endColumn": 10,
+    "endLine": 7,
+    "line": 7,
+    "message": "React Hook useMemo has a missing dependency: 'hookVariable'. Either include it or remove the dependency array.",
+    "nodeType": "ArrayExpression",
+    "ruleId": "react-hooks/exhaustive-deps",
+    "severity": 2,
+    "suggestions": [
+      {
+        "desc": "Update the dependencies array to be: [hookVariable]",
+        "fix": {
+          "range": [
+            208,
+            210
+          ],
+          "text": "[hookVariable]"
+        }
+      }
+    ]
+  }
+]

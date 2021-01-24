@@ -1,0 +1,22 @@
+CODE:
+function useHook (): void { console.log("hook") }
+
+function ConditionalHook (opts: { foo: any }): void {
+  if (opts.foo !== "") { useHook() }
+}
+
+console.log(ConditionalHook)
+
+ERRORS:
+[
+  {
+    "column": 26,
+    "endColumn": 33,
+    "endLine": 4,
+    "line": 4,
+    "message": "React Hook \"useHook\" is called conditionally. React Hooks must be called in the exact same order in every component render.",
+    "nodeType": "Identifier",
+    "ruleId": "react-hooks/rules-of-hooks",
+    "severity": 2
+  }
+]
